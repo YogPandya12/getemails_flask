@@ -1,4 +1,3 @@
-# getemails_flask
 
 # Project Setup Instructions
 
