@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Extractor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Email Extractor</h1>
+        <form action="/process" method="post" enctype="multipart/form-data" onsubmit="uploadFile(event)">
+            <label for="file">Upload Excel File:</label>
+            <input type="file" name="file" id="file" required>
+            <button type="submit">Upload</button>
+        </form>
+
+        <div id="status"></div>
+
+        <div id="file-instructions" class="info-message">
+            <p><strong>Note:</strong> Please ensure that your Excel file contains a column named <strong>"url"</strong> or <strong>"website"</strong> with the URLs you want to extract emails from.</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
